@@ -196,7 +196,7 @@ async def url(client, message):
         
 async def download(url):
     ext = url.split(".")[-1]
-    filename = str(randint(1000, 9999)) + "." + ext
+    filename = f"{str(randint(1000, 9999))}.{ext}"
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             if resp.status == 200:
